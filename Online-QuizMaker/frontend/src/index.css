@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Global layout reset --- */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1FA2FF, #12D8FA, #A6FFCB);
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease infinite;
+  font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #0a1b2a; /* ✅ Darkened text for contrast */
+  scroll-behavior: smooth;
+}
+
+/* --- Text Styles --- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  color: #042f44; /* ✅ Deep aqua navy tone for clarity */
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+p, label, span, li, div, input, button {
+  font-weight: 600;
+  color: #053b4f; /* ✅ Readable dark teal-blue */
+}
+
+strong, b {
+  color: #02151f; /* ✅ Visible and bold */
+  font-weight: 800;
+}
+
+/* --- Links --- */
+a {
+  color: #053b4f;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+/* --- Neon Glow Buttons --- */
+.btn-neon {
+  display: inline-block;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(90deg, #00f5ff, #00bfff, #009dff);
+  background-size: 200% auto;
+  box-shadow: 0 0 18px rgba(0, 242, 255, 0.5);
+  transition: all 0.4s ease;
+}
+.btn-neon:hover {
+  background-position: right center;
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.8);
+}
+
+/* --- Glassmorphism Containers --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  color: #0b2c3a; /* ✅ Ensures text inside cards is dark and visible */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+/* --- Animated Gradient Background --- */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Fade / Slide Animation --- */
+.fade-in {
+  animation: fadeIn 1.2s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffe0, #007fff);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffcc, #0099ff);
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Inputs --- */
+input, textarea, select {
+  border-radius: 10px;
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.25);
+  color: #053b4f; /* ✅ Darker text inside inputs */
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  border-color: #00d4ff;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* --- Utility Classes --- */
+.full-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
